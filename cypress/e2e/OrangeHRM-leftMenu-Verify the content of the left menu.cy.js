@@ -41,7 +41,7 @@ describe('Test the content of the left menu', () => {
     //Buzz
     cy.get(':nth-child(10) > .oxd-main-menu-item > .oxd-text').should('be.visible')
     
-    //cy.get('.oxd-input').type('test')
-    //cy.get(':nth-child(3) > .oxd-main-menu-item > .oxd-text').should('is.not.visible')
+    cy.get('.oxd-input').type('test')
+    cy.get(':nth-child(3) > .oxd-main-menu-item > .oxd-text').should('not.exist')
     })
 })
