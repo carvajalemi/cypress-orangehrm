@@ -12,7 +12,7 @@ describe('Test the correct content is displayed after clicking the Recruitment o
     //get button login and click over it
     cy.get('[class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]').click()
 
-    //click on the Admin option of the left menu
+    //click on the Recruitment option of the left menu
     cy.get('[href="/web/index.php/recruitment/viewRecruitmentModule"]').click()
 
     //Verify Recruitment title in the page
