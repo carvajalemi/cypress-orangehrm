@@ -1,6 +1,6 @@
 const data = require('../fixtures/data.json');
-describe('Test Timessheets link is opened and displays the correct content', () => {
-  it('It should validate that Timessheets link is opened and displays the correct content', () => {
+describe('Test the Search option works correctly with invalid data', () => {
+  it('It should validate the Search option works correctly with invalid data', () => {
     cy.visit(data.config.baseUrl)
   
     //get input name and fill in the value
@@ -15,11 +15,10 @@ describe('Test Timessheets link is opened and displays the correct content', () 
     //Verify h6 is displayed in the page
     cy.get ('[class="oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module"]')
 
-    //get Timesheets option and click over it
-    cy.get('.oxd-grid-3>:nth-child(3) > .oxd-icon-button > .oxd-icon').click()
+    //Search an option that doesn't exit 
+    cy.get('.oxd-input').type('test')
 
-    //verify the content of the page
-    cy.get('.orangehrm-card-container > .oxd-text--h6').contains('Select Employee')
-   
-  })
+    //After searching any option that doesn't exist any specific option shouldn't exist in the menu
+    cy.get(':nth-child(3) > .oxd-main-menu-item > .oxd-text').should('not.exist')
+    })
 })
