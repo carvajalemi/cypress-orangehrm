@@ -1,12 +1,13 @@
+const data = require('../fixtures/data.json');
 describe('Test the content of the left menu', () => {
   it('It should validate the content of the left menu', () => {
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.visit(data.config.baseUrl)
   
     //get input name and fill in the value
-    cy.get('[name="username"]').type('Admin')
+    cy.get('[name="username"]').type(data.users[0].username)
     
     //get input password and fill in the value
-    cy.get('[name="password"]').type('admin123')
+    cy.get('[name="password"]').type(data.users[0].password)
 
     //get button login and click over it
     cy.get ('[type="submit"]').click()
