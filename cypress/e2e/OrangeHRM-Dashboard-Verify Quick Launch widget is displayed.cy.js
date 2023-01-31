@@ -1,15 +1,16 @@
+const data = require('../fixtures/data.json');
 describe('Test Quick Launch widget is displayed', () => {
   it('Should validate Quick Launch widget is displayed', () => {
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
-
+    cy.visit(data.config.baseUrl)
+    
     //verify the Login title in the page
     cy.get('[class="oxd-text oxd-text--h5 orangehrm-login-title"]').contains('Login')
 
     //get input name and fill in the value
-    cy.get('[name="username"]').type('Admin')
+    cy.get('[name="username"]').type(data.users[0].username)
     
     //get input password and fill in the value
-    cy.get('[name="password"]').type('admin123')
+    cy.get('[name="password"]').type(data.users[0].password)
 
     //get button login and click over it
     cy.get('[class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]').click()
