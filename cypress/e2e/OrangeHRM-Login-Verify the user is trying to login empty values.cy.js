@@ -1,6 +1,7 @@
+const data = require('../fixtures/data.json');
 describe('Test a user is trying to login empty values', () => {
   it('Should validate a user is trying to login empty values', () => {
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.visit(data.config.baseUrl)
   
     //verify the Login title in the page
     cy.get('[class="oxd-text oxd-text--h5 orangehrm-login-title"]').contains('Login')
