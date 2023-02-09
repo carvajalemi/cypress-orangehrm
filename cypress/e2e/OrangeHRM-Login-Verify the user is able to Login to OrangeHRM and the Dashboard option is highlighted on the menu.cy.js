@@ -1,8 +1,7 @@
 const data = require('../fixtures/data.json');
 describe('Test a user is able to Login to OrangeHRM and the Dashboard option is highlighted on the menu', () => {
   it('Should validate a user is able to Login to OrangeHRM and the Dashboard option is highlighted on the menu', () => {
-    cy.visit(data.config.baseUrl)
-  
+    cy.visit(Cypress.env('baseUrls'))
     //get input name and fill in the value
     cy.get('[name="username"]').type(data.users[0].username)
     

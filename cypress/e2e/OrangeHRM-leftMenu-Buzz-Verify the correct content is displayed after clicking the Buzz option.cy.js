@@ -1,7 +1,7 @@
 const data = require('../fixtures/data.json');
 describe('Test the correct content is displayed after clicking the Buzz option', () => {
   it('It should validate correct content is displayed after clicking the Buzz option', () => {
-    cy.visit(data.config.baseUrl)
+    cy.visit(Cypress.env('baseUrls'))
   
     //get input name and fill in the value
     cy.get('[name="username"]').type(data.users[0].username)

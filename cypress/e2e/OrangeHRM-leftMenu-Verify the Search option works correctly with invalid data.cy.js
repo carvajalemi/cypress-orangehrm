@@ -1,7 +1,7 @@
 const data = require('../fixtures/data.json');
 describe('Test the Search option works correctly with invalid data', () => {
   it('It should validate the Search option works correctly with invalid data', () => {
-    cy.visit(data.config.baseUrl)
+    cy.visit(Cypress.env('baseUrls'))
   
     //get input name and fill in the value
     cy.get('[name="username"]').type(data.users[0].username)

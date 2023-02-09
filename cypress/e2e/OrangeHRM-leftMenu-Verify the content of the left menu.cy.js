@@ -1,7 +1,7 @@
 const data = require('../fixtures/data.json');
 describe('Test the content of the left menu', () => {
   it('It should validate the content of the left menu', () => {
-    cy.visit(data.config.baseUrl)
+    cy.visit(Cypress.env('baseUrls'))
   
     //get input name and fill in the value
     cy.get('[name="username"]').type(data.users[0].username)

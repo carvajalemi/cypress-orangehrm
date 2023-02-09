@@ -1,7 +1,7 @@
 const data = require('../fixtures/data.json');
 describe('Test Quick Launch widget is displayed', () => {
   it('Should validate Quick Launch widget is displayed', () => {
-    cy.visit(data.config.baseUrl)
+    cy.visit(Cypress.env('baseUrls'))
     
     //verify the Login title in the page
     cy.get('[class="oxd-text oxd-text--h5 orangehrm-login-title"]').contains('Login')

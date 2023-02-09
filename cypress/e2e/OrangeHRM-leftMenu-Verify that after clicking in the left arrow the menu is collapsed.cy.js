@@ -1,7 +1,7 @@
 const data = require('../fixtures/data.json');
 describe('Test that after clicking in the left arrow the menu is collapsed', () => {
   it('I should validate that after clicking in the left arrow the menu is collapsed', () => {
-    cy.visit(data.config.baseUrl)
+    cy.visit(Cypress.env('baseUrls'))
   
     //get input name and fill in the value
     cy.get('[name="username"]').type(data.users[0].username)

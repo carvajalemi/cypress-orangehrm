@@ -1,7 +1,7 @@
 const data = require('../fixtures/data.json');
 describe('Test that My Timesheet link is opened and displays the correct content', () => {
   it('should validate that My Timesheet link is opened and displays the correct content', () => {
-    cy.visit(data.config.baseUrl)
+    cy.visit(Cypress.env('baseUrls'))
     
     //get input name and fill in the value
     cy.get('[name="username"]').type(data.users[0].username)
